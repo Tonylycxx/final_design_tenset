@@ -43,6 +43,7 @@ def remeasure_file(task_idx, task, target, target_host, batch_size, measurer_kwa
     to_measure_filename = get_to_measure_filename(task)
     inputs, _ = auto_scheduler.RecordReader(to_measure_filename).read_lines()
     task = auto_scheduler.measure.recover_measure_input(inputs[0]).task
+    print(task)
     task = auto_scheduler.SearchTask(
         workload_key=task.workload_key,
         target=target,
